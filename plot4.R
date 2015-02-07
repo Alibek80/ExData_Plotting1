@@ -1,5 +1,6 @@
 setwd("D:/Dropbox/Exams/Coursera data science/ExData_Plotting1")
 
+# EXTRACT DATA FILE INTO THE "Data" DIRECTORY
 
 # Loading dataset from text file
 file1 <- "./Data/household_power_consumption.txt"

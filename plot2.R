@@ -1,5 +1,7 @@
 setwd("D:/Dropbox/Exams/Coursera data science/ExData_Plotting1")
 
+# EXTRACT DATA FILE INTO THE "Data" DIRECTORY
+
 # Loading dataset from text file
 file1 <- "./Data/household_power_consumption.txt"
 data <- read.table(file1, header = TRUE, sep = ";", colClasses = c("character", "character", rep ("numeric",7)), na = "?")
