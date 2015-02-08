@@ -1,10 +1,20 @@
 setwd("D:/Dropbox/Exams/Coursera data science/ExData_Plotting1")
 
-# EXTRACT DATA FILE INTO THE "Data" DIRECTORY
+link="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+
+# Download and unzip the data file
+if(!file.exists("./Data/household_power_consumption.txt")){
+    download.file(link, destfile="./Data/household_power_consumption.zip")
+    unzip("./Data/household_power_consumption.zip", exdir = "./Data")
+}
 
 # Loading dataset from text file
 file1 <- "./Data/household_power_consumption.txt"
 data <- read.table(file1, header = TRUE, sep = ";", colClasses = c("character", "character", rep ("numeric",7)), na = "?")
+
+# Removing files to save space in GitHub
+file2 <- "./Data/household_power_consumption.zip"
+file.remove(file1, file2)
 
 # Merging date and time columns for future plotting purposes
 data$DateTime <- strptime(paste (data$Date, data$Time, sep = " "), "%d/%m/%Y %H:%M:%S")
